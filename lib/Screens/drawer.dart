@@ -103,6 +103,7 @@ class _DrawerState extends State<DrawerScreen> {
                   ),
                   width: width,
                 ),
+                const SizedBox(height: 100),
                 buildTab(width, Icons.exit_to_app, 'Logout'),
               ],
             ),

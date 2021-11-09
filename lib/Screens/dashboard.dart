@@ -153,7 +153,7 @@ class Dashboard extends StatelessWidget {
 
   SizedBox featuredArticleWidget() {
     return SizedBox(
-      height: Get.height / 2,
+      height: Get.height / 2.4,
       width: Get.width,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -174,7 +174,7 @@ class Dashboard extends StatelessWidget {
                       images[index],
                       fit: BoxFit.cover,
                       height: Get.height / 2,
-                      width: Get.width / 2.5,
+                      width: Get.width / 2,
                     ),
                     Container(
                       padding: const EdgeInsets.all(8),
@@ -192,7 +192,7 @@ class Dashboard extends StatelessWidget {
                     Positioned(
                       bottom: 0,
                       child: Container(
-                        width: Get.width / 2.5,
+                        width: Get.width / 2,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
@@ -211,6 +211,7 @@ class Dashboard extends StatelessWidget {
                               images[index]
                                   .replaceAll('\\', '')
                                   .replaceAll('https://', '')
+                                  .replaceAll('.com/', '')
                                   .toString(),
                               maxLines: 3,
                               style: GoogleFonts.lato(
@@ -236,8 +237,8 @@ class Dashboard extends StatelessWidget {
                                   backgroundColor: Colors.white,
                                   child: SvgPicture.asset(
                                     'assets/Fav Stassssr.svg',
-                                    height: 25,
-                                    width: 25,
+                                    height: 15,
+                                    width: 15,
                                   ),
                                 )
                               ],

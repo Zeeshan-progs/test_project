@@ -61,38 +61,34 @@ class Photos extends StatelessWidget {
                               ),
                             ),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Expanded(
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      buildImageDialog(context,
-                                          image: data.url);
-                                    },
-                                    child: Image.network(
-                                      data.url,
-                                      // height: 200,
-                                      // width: Get.width / 2.5,
-                                      fit: BoxFit.cover,
-                                    ),
+                                GestureDetector(
+                                  onTap: () {
+                                    buildImageDialog(context, image: data.url);
+                                  },
+                                  child: Image.network(
+                                    data.url,
+                                    height: Get.height / 5,
+                                    width: Get.width / 2.5,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 3,
-                                ),
-                                Expanded(
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      buildImageDialog(
-                                        context,
-                                        image: data.thumbnailUrl,
-                                      );
-                                    },
-                                    child: Image.network(
-                                      data.thumbnailUrl,
-                                      // height: 200,
-                                      // width: Get.width / 2.5,
-                                      fit: BoxFit.cover,
-                                    ),
+                                GestureDetector(
+                                  onTap: () {
+                                    buildImageDialog(
+                                      context,
+                                      image: data.thumbnailUrl,
+                                    );
+                                  },
+                                  child: Image.network(
+                                    data.thumbnailUrl,
+                                    height: Get.height / 5,
+                                    width: Get.width / 2.5,
+
+                                    // height: 200,
+                                    // width: Get.width / 2.5,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ],

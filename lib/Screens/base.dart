@@ -70,14 +70,16 @@ class Base extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar:
           buildBottomNavigationMenu(context, bottombarcontroller),
-      body: Obx(() => IndexedStack(
-            index: bottombarcontroller.tabIndex.value,
-            children: [
-              Dashboard(),
-              HomeScreen(),
-              // ProfileScreen(),
-            ],
-          )),
+      body: Obx(
+        () => IndexedStack(
+          index: bottombarcontroller.tabIndex.value,
+          children: [
+            Dashboard(),
+            HomeScreen(),
+            // ProfileScreen(),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -4,11 +4,12 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:test_project/Controller/save_token.dart';
+import 'package:test_project/Screens/base.dart';
 import 'package:test_project/Screens/home_screen.dart';
 
 class AuthController extends GetxController {
   var loading = false.obs;
-  RxBool show = false.obs;
+  RxBool show = true.obs;
   final formKey = GlobalKey<FormState>();
 
   TextEditingController email = TextEditingController();
@@ -24,13 +25,14 @@ class AuthController extends GetxController {
         "password": pass.text,
       },
     );
+    print(response.status);
     if (response.statusCode == 200) {
       var convert = jsonDecode(response.bodyString!);
       StoreData.setToken('token', convert['token'].toString()).then((value) {
         if (value == true) {
           Get.offUntil(
               GetPageRoute(
-                page: () => HomeScreen(),
+                page: () => Base(),
               ),
               (route) => false);
         }
